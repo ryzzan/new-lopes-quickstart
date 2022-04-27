@@ -1,0 +1,36 @@
+<mat-card class="centralized">
+  <mat-card-header>
+    <div mat-card-avatar>
+      <img src="../../../assets/images/logos/main_logo.png" alt="Main logo" height="48px">
+    </div>
+    <mat-card-title style="font-size: 20px;">
+      Projeto
+    </mat-card-title>
+    
+    <mat-card-subtitle>
+      Autenticação no sistema.
+    </mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <form id="login" [formGroup]="loginForm" (ngSubmit)="loginSubmit()" class="flex-column" *ngIf="!isLoading">
+      <mat-form-field>
+        <mat-label>Usuário</mat-label>
+        <input matInput type="text" formControlName="username" id="user" placeholder="Sua identidade, nome de usuário ou e-mail" required autocomplete="new-password">
+        <mat-error>{{errorHandler.validatorError(loginForm.controls['username'].errors)}}</mat-error> 
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Senha</mat-label>
+        <input matInput type="password" formControlName="password" id="password" placeholder="Digite sua senha" required autocomplete="new-password">
+        <mat-error>{{errorHandler.validatorError(loginForm.controls['password'].errors)}}</mat-error> 
+      </mat-form-field>
+      
+      <button mat-raised-button color="primary" [disabled]="!loginForm.valid || isLoading">
+        ENTRAR
+      </button>
+    </form>
+
+    <div *ngIf="isLoading" class="loading">
+      <mat-progress-bar color="primary" mode="buffer"></mat-progress-bar>
+    </div>
+  </mat-card-content>
+</mat-card>
