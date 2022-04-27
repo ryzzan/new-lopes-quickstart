@@ -31,21 +31,25 @@ export class AuthService {
     this.user.next(JSON.parse(data));
   }
 
-  async login(login: any): Promise<any> {
+  login = async (login: any): Promise<any> => {
+    login.client_id = environment.clientId;
+    login.client_secret = environment.clientSecret;
+    login.grant_type = 'password';
+
     return this.http
       .post(`${this.BASE_URL}/auth/lopesdigital`, login)
       .toPromise();
   }
 
-  async requestPassword(login: { email: string }): Promise<any> {
+  requestPassword = async (login: { email: string }): Promise<any> => {
     return this.http
       .post(`${this.BASE_URL}/auth/request-password`, login)
       .toPromise();
   }
 
-  logout(): void {
+  logout = () => {
     this.user.next(null);
     localStorage.clear();
-    void this.router.navigate(['/']);
+    this.router.navigate(['/']);
   }
 }

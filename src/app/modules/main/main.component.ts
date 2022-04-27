@@ -73,14 +73,8 @@ export class MainComponent implements OnInit {
   };
 
   logout = () => {
-    this._auth.signOut()
-    .then(res => {
-      this.router.navigate(['/']);
-    })
-    .catch(err => {
-      const message = this._errorHandler.apiErrorMessage(err.message);
-      this.sendErrorMessage(message);
-    })
+    sessionStorage.clear();
+    this._auth.logout();
   };
 
   changePermissionIndex = (index: number) => {
