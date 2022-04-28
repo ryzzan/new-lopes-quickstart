@@ -8,7 +8,7 @@ export class AuthenticationGuard {
   canActivate = (
     router: Router
   ): boolean => {    
-    if (!sessionStorage.getItem('uniqueId')) {
+    if (!sessionStorage.getItem('_id')) {
       router.navigate(['/']);
       console.warn('You must authenticate to login!');
       return false;

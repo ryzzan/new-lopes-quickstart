@@ -81,26 +81,26 @@ $mat-knltk-alert: (
   )
 );
 
-$kunlatek-quickstart-primary: mat.define-palette($mat-knltk-main);
-$kunlatek-quickstart-accent: mat.define-palette($mat-knltk-alert, A200, A100, A400);
+$lopes-quickstart-primary: mat.define-palette($mat-knltk-main);
+$lopes-quickstart-accent: mat.define-palette($mat-knltk-alert, A200, A100, A400);
 
 // The warn palette is optional (defaults to red).
-$kunlatek-quickstart-warn: mat.define-palette($mat-knltk-danger);
+$lopes-quickstart-warn: mat.define-palette($mat-knltk-danger);
 
 // Create the theme object. A theme consists of configurations for individual
 // theming systems such as "color" or "typography".
-$kunlatek-quickstart-theme: mat.define-light-theme((
+$lopes-quickstart-theme: mat.define-light-theme((
   color: (
-    primary: $kunlatek-quickstart-primary,
-    accent: $kunlatek-quickstart-accent,
-    warn: $kunlatek-quickstart-warn,
+    primary: $lopes-quickstart-primary,
+    accent: $lopes-quickstart-accent,
+    warn: $lopes-quickstart-warn,
   )
 ));
 
 // Include theme styles for core and each component used in your app.
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.
-@include mat.all-component-themes($kunlatek-quickstart-theme);
+@include mat.all-component-themes($lopes-quickstart-theme);
 
 .mat-card:not([class*=mat-elevation-z]) {
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
