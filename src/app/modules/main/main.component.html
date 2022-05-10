@@ -2,19 +2,8 @@
   <button mat-icon-button class="icon" aria-label="Example icon-button with menu icon" (click)="drawer.toggle()">
     <mat-icon>menu</mat-icon>
   </button>
-  <span class="flex-row">
-    <img src="../../../assets/images/logos/main_logo.png" alt="Google logo" height="24px" style="margin-right: 8px;">
-    Lopes Quickstart
-  </span> 
+  <span>Lopes Quickstart</span>
   <span class="spacer"></span>
-  <!-- <mat-form-field>
-    <mat-label>Perfil relacionado</mat-label>
-    <mat-select [(value)]="permissionIndex"  (selectionChange)="changePermissionIndex(permissionIndex)">
-      <mat-option *ngFor="let owner of permissionGroupsOwners; let i = index" [value]="i">
-        {{owner.owner.name}}
-      </mat-option>
-    </mat-select>
-  </mat-form-field> -->
   <button mat-icon-button class="icon" aria-label="Perfil" [matMenuTriggerFor]="profileMenu">
     <mat-icon>account_circle</mat-icon>
   </button>
@@ -35,13 +24,13 @@
         {{item.itens.length > 0}}
         <div *ngFor="let i of item.itens">
           <!-- <a [routerLink]="i.router" [routerLinkActive]="['menu-active']" class="flex-row menu-item">
-                            <div>
-                                <mat-icon>{{i.icon}}</mat-icon>
-                            </div>
-                            <div>
-                                {{i.title}}
-                            </div>
-                        </a> -->
+                          <div>
+                              <mat-icon>{{i.icon}}</mat-icon>
+                          </div>
+                          <div>
+                              {{i.title}}
+                          </div>
+                      </a> -->
         </div>
       </div>
     </div>

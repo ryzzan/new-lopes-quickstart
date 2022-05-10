@@ -17,13 +17,15 @@ import { HttpClientModule } from '@angular/common/http';
 import { RemoveConfirmationDialogComponent } from './components/remove-confirmation-dialog/remove-confirmation-dialog.component';
 import { MyErrorHandler } from './utils/error-handler';
 import { LoginComponent } from './components/login/login.component';
+import { GenericAnalyticReportComponent } from './components/generic-analytic-report/generic-analytic-report.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     LogoutConfirmationDialogComponent,
-    RemoveConfirmationDialogComponent
+    RemoveConfirmationDialogComponent,
+    GenericAnalyticReportComponent
   ],
   imports: [
     BrowserModule,
@@ -31,34 +33,10 @@ import { LoginComponent } from './components/login/login.component';
     HttpClientModule,
     SocialLoginModule,
     SharedModule,
-    provideFirebaseApp(() => initializeApp(environment.firebase)),
-    provideAnalytics(() => getAnalytics()),
-    provideAuth(() => getAuth()),
-    provideFirestore(() => getFirestore()),
-    provideStorage(() => getStorage()),
     BrowserAnimationsModule
   ],
   providers: [
     MyErrorHandler,
-    ScreenTrackingService,UserTrackingService,
-    {
-      provide: 'SocialAuthServiceConfig',
-      useValue: {
-        autoLogin: false,
-        providers: [
-          {
-            id: GoogleLoginProvider.PROVIDER_ID,
-            provider: new GoogleLoginProvider(
-              '413290861112-43bvqf7reds8dpdis6j40l7dp0fkcbij.apps.googleusercontent.com'
-            )
-          },
-          {
-            id: FacebookLoginProvider.PROVIDER_ID,
-            provider: new FacebookLoginProvider('clientId')
-          }
-        ]
-      } as SocialAuthServiceConfig,
-    }
   ],
   bootstrap: [AppComponent]
 })

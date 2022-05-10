@@ -1,6 +1,15 @@
+::ng-deep .mat-toolbar {
+  z-index: 998;
+  position: fixed;
+}
+
 a {
   text-decoration: none;
   color: #000000;
+}
+
+.spacer {
+  flex: 1 1 auto;
 }
 
 .container {
@@ -18,27 +27,24 @@ a {
 }
 
 .menu {
-  border-bottom: #cacaca solid 1px;
+  border-bottom: #ffffff solid 1px;
   padding: 10px 0 10px 0;
-  background-color: #807979;
 }
 
 .menu a:hover {
-  color: #cacaca;
+  color: #ffffff;
 }
 
 .menu-item {
   margin: 0 10px 0 10px;
-  color: #ffffff;
 }
 
 .menu-item mat-icon {
   padding-right: 10px;
-  color: #ffffff;
 }
 
 .menu-active {
-  color: #000000;
+  color: #3a57b7;
 }
 
 .submenu {
@@ -53,7 +59,6 @@ a {
   padding: 1px;
 }
 
-
 .sidenav-content {
   position: fixed;
   margin-top: 64px;
@@ -61,5 +66,4 @@ a {
   height: 100%;
   align-items: center;
   justify-content: center;
-  background-color: #807979;
 }
